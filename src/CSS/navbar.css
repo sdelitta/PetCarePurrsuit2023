@@ -1,0 +1,290 @@
+Link {
+  text-decoration: none;
+  color: purple;
+}
+
+header {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  background: rgb(242, 234, 229);
+  height: 10em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+}
+
+nav {
+  flex: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 50px;
+  position: relative;
+}
+
+nav a,
+nav h3 {
+  font-family: "new-kansas", sans-serif;
+  text-shadow: 0 1px .6px #8c869089;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: auto 1.6em;
+  color: rgb(113, 41, 162);
+  font-weight: 600;
+  font-size: 20px;
+}
+nav a:hover{
+    text-decoration:underline;
+}
+
+.nav-container.right-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 200px;
+}
+
+.emblem-container {
+  display: flex;
+  flex-direction: center;
+}
+
+.emblem {
+  background-image: url(../assets/Logo3rddraft.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  margin-top: 180px;
+}
+
+.nav-container.left-container {
+  display: flex;
+  justify-content: flex-start;
+  /* margin: 0 2.5vw; */
+}
+
+.hidden-menu button {
+  display: none;
+}
+
+.sign-out {
+  padding: 5px;
+  width: 8vw;
+  background-color: #f3691a;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.sign-out-button a {
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 26px;
+  width: 40px;
+  cursor: pointer;
+  position: absolute;
+  left: 40px;
+  transform: translateY(-50%);
+  margin-top: 15px;
+}
+
+.burger-menu div {
+  height: 4px;
+  background-color: rgb(113, 41, 162);
+  margin-bottom: 3px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 61%;
+  left: 4%;
+  background-color: rgb(242, 234, 229);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 4px;
+}
+
+.dropdown-menu a {
+  padding: 8px 0 8px 0;
+  margin-right: 3px;
+  text-decoration: none;
+  font-family: "new-kansas", sans-serif;
+  text-shadow: 0 1px .6px #8c869089;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgb(113, 41, 162);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.dropdown-menu.show {
+  display: flex;
+}
+
+.visible-link {
+  display: flex;
+
+}
+
+/* .hidden-link {
+  display: none;
+} */
+
+
+@media only screen and (max-width: 1200px) {
+  nav {
+    flex: 80%;
+    display: flex;
+    justify-content: center;
+    padding: .1px;
+    padding-top: 46px;
+    align-items: center;
+  }
+
+  nav a,
+  nav h3 {
+    padding: 0px 5px;
+    align-items: space-around;
+    font-size: 15px;
+  }
+
+  .emblem {
+    background-image: url(../assets/Logo3rddraft.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+  }
+
+  .emblem-container {
+    flex: 1 1;
+    display: flex;
+  }
+
+  .nav-container.right-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* margin-bottom: 20px; */
+    /* margin-top: 15px; */
+    margin-right: 60px;
+  }
+
+  .rightsideLink {
+    display: flex;
+    align-content: center;
+  }
+
+  .nav-container.left-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 0px 4vw;
+  }
+
+}
+
+@media only screen and (max-width: 900px) {
+  nav a,
+  nav h3 {
+    padding: 0px 0px;
+    align-items: space-around;
+    font-size: 15px;
+  }
+
+  .nav-container.left-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 0px 0px 0px 3vw;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .burger-menu {
+    display: flex;
+    margin-top: -32px;
+    margin-left: 4px;
+  }
+
+  .burger-menu div {
+    height: 4px;
+    background-color: rgb(113, 41, 162);
+    margin-bottom: 3px;
+  }
+
+  nav {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    position: relative; 
+  }
+
+  nav a {
+    padding: 0px;
+    margin: 0px 6px;
+    font-size: 1em;
+  }
+
+  .nav-container.left-container {
+    display: none;
+  }
+
+  .nav-container.right-container {
+    display: flex;
+    margin-right: 3px;
+    margin-bottom: 19px;
+  }
+
+  .emblem-container {
+    flex: 1 1 ;
+    display: flex;
+    justify-content: center; 
+    position: absolute; 
+    left: 50%; 
+    transform: translateX(-50%); 
+  }
+
+  .emblem {
+    margin-top: 60px;
+    width: 200px;
+    height: 200px;
+  }
+
+  .sign-out {
+    padding: 2px;
+    width: 48px;
+    background-color: #f3691a;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    border-radius: 10px 10px 10px 10px;
+  }
+
+}

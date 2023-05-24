@@ -1,0 +1,61 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  max-height: 5vh;
+  /* padding-top: 40px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+body {
+  display: flex;
+  background-color: #4d5a74;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  font-family:"new-kansas", sans-serif;
+  /* background-image: url(../assets/Steve_Toast_Cover_image_for_a_pet-care_blog_that_features_vario_e0269b0d-7629-4717-89ed-9f60f77b5e56\ copy.png); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+
+main {
+  flex: 1 0 auto;
+}
+
+.petpurrsuit {
+  display: none;
+  text-shadow: 0 3px 1px #8c869089;
+}
+
+button:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+@media only screen and (max-width: 716px) {
+  header {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .App-header {
+    padding-top: 3vh;
+  }
+
+  .petpurrsuit {
+      display: contents;
+      font-family: 'Sigmar One';
+      font-size: 2.2em;
+      color: orange;
+  }
+}

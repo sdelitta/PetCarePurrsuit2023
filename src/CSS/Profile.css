@@ -1,0 +1,25 @@
+.profile {
+    margin: auto;
+    padding-top: 30px;
+    font-size: 2.5vh;
+    text-shadow: 0 1px 1px #8c869089;
+    color: #6c1f96;
+    max-width: 40vw;
+    font-family: "new-kansas", sans-serif;
+    font-weight: 500;
+    font-style: normal;   
+}
+
+.saved_pets {
+    background-color: white;
+    color: #431a59da;
+    text-shadow: 0 1px 1px #8c869089;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 360px 0 20vh 7vw;
+    padding-bottom: 25px;
+    width: 85vw;
+    background: rgb(250, 243, 238);
+    border-radius: 36px;
+}

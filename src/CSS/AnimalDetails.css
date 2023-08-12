@@ -39,11 +39,11 @@
   }
   
   .details_img_container {
-    height: 44.9vh;
+    max-height: 44.9vh;
     object-fit: contain;
     overflow: hidden;
     border-radius: 10px 0 0 10px;
-    border: 1px solid #e0e0e0;
+    /* border: 1px solid #e0e0e0; */
   }
   
   .details_img {

@@ -158,6 +158,7 @@ const Nav = () => {
               {/* Dropdown menu */}
               <div className={`dropdown-menu${dropdownMenuVisible ? ' show' : ''}`} id="dropdownMenu">
                 <NavLink className="menu-link" to="/blog" onClick={handleLinkClick}>Home</NavLink>
+                <NavLink className="menu-link" to="/search" onClick={handleLinkClick}>Search</NavLink>
                 <NavLink className="menu-link" to="/about" onClick={handleLinkClick}>About</NavLink>
                 <NavLink className="menu-link" to="/donate">Non-Profit</NavLink>
               </div>

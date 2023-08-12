@@ -1,10 +1,23 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import '../CSS/Donate.css';
 
 
 const OrganizationPage = () => {
   return (
     <div className="donate">
+        <Helmet>
+            <title>Pet Care Purrsuit: Donate</title>
+            <meta name="description" content="Discover the latest articles on pet care, health, tips, and more." />
+            <link rel="canonical" href="https://www.petcarepurrsuit.com/donate" />
+            <meta property="og:title" content="Pet Care Purrsuit" />
+            <meta property="og:description" content="Discover the latest articles on pet care, health, tips, and more." />
+            <meta property="og:url" content="https://www.petcarepurrsuit.com/donate" />
+            <meta property="og:type" content="website" />
+            <meta property="og:image" content="	https://www.petcarepurrsuit.com/static/media/Logo3rddraft.1db62124804ecf893ff8.png" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="627"/>
+        </Helmet>
         <div style={{height:'8vh'}}></div>
         <div className="donate_container">
             <div className="donate_row">

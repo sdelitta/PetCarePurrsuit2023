@@ -1,63 +1,65 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom";
-import { auth, db } from '../firebase';
-import { doc, getDoc } from "firebase/firestore";
+// import { auth, db } from '../firebase';
+// import { doc, getDoc } from "firebase/firestore";
 import client from '../contentful';
 import "../CSS/navbar.css";
 
+
 const Nav = () => {
-  const [currentUser, setCurrentUser] = useState(null);
-  const [username, setUsername] = useState('');
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [dropdownMenuVisible, setDropdownMenuVisible] = useState(false);
-  // const [menuOpen, setMenuOpen] = useState(false);
+  // const [currentUser, setCurrentUser] = useState(null);
+  // const [username, setUsername] = useState('');
   const [loadingCategories, setLoadingCategories] = useState(true);
   const [categories, setCategories] = useState([]);
 
 
 
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      setCurrentUser(user);
-    });   
-    return () => {
-      unsubscribe();
-    };
-  }, []);
+  // useEffect(() => {
+  //   const unsubscribe = auth.onAuthStateChanged((user) => {
+  //     setCurrentUser(user);
+  //   });   
+  //   return () => {
+  //     unsubscribe();
+  //   };
+  // }, []);
 
-  useEffect(() => {
-    const fetchUsername = async () => {
-      if (currentUser) {
-        const userDocRef = doc(db, 'users', currentUser.uid);
-        const userDocSnap = await getDoc(userDocRef);
-        const data = userDocSnap.data();
-        if (data && data.userName) {
-          setUsername(data.userName);
-        } else {
-          setUsername('');
-        }
-      } else {
-        setUsername('');
-      }
-      setLoading(false);
-    };
+  // useEffect(() => {
+  //   const fetchUsername = async () => {
+  //     if (currentUser) {
+  //       const userDocRef = doc(db, 'users', currentUser.uid);
+  //       const userDocSnap = await getDoc(userDocRef);
+  //       const data = userDocSnap.data();
+  //       if (data && data.userName) {
+  //         setUsername(data.userName);
+  //       } else {
+  //         setUsername('');
+  //       }
+  //     } else {
+  //       setUsername('');
+  //     }
+  //     setLoading(false);
+  //   };
   
-    fetchUsername();
-    // console.log("Username is: ", username)
-  }, [currentUser]);
+  //   fetchUsername();
+  //   console.log("Username is: ", username)
+  // }, [currentUser]);
 
-  const handleSignOut = async () => {
-    try {
-      await auth.signOut();
-      console.log('User signed out');
-    } catch (error) {
-      console.error('Error signing out:', error);
-    }
-  };
+  // const handleSignOut = async () => {
+  //   try {
+  //     await auth.signOut();
+  //     console.log('User signed out');
+  //   } catch (error) {
+  //     console.error('Error signing out:', error);
+  //   }
+  // };
   
   const toggleDropdownMenu = () => {
+    console.log('Mouse left the menu');
     setDropdownMenuVisible(!dropdownMenuVisible);
-  };
+};
+
 
   const handleLinkClick = () => {
     setDropdownMenuVisible(false);
@@ -94,8 +96,8 @@ const Nav = () => {
           <div className="logo-container">
             <div className="nav-container left-container">
               <NavLink className="rightsideLink" to="/blog">Home</NavLink>
-              {/* <NavLink className="rightsideLink" to="/search">Search</NavLink> */}
-              <NavLink className="rightsideLink hidden-link" to="/donate">Non-Profit</NavLink>
+              <NavLink className="rightsideLink" to="/search">Search</NavLink>
+              <NavLink className="rightsideLink hidden-link" to="/donate">Non-Profits</NavLink>
               <NavLink className="rightsideLink" to="/about">About</NavLink>
             </div>
           </div>
@@ -106,6 +108,21 @@ const Nav = () => {
 
           <div className="right-container">
             <div className="nav-container right-container">
+              <div className="dropdown">
+                <h3 className="dropbtn">Categories{'>'}</h3>
+                <div className="dropdown-content">
+                  {!loadingCategories && categories.map(category => (
+                    <NavLink
+                      key={category}
+                      className="dropdown-item"
+                      to={`/category/${category}`}
+                      onClick={handleLinkClick}
+                    >
+                      {category}
+                    </NavLink>
+                  ))}
+                </div>
+              </div>
               {/* {!loadingCategories && categories.map(category => (
                 <NavLink 
                   key={category}
@@ -131,20 +148,20 @@ const Nav = () => {
                 <NavLink className="rightsideLink" to="/signin">Sign In</NavLink>
               )} */}
             </div>
-            <div className="burger-menu" onClick={toggleDropdownMenu}>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
+            <div className="burger-menu-container">
+              <div className="burger-menu" tabIndex="0">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
 
-            {/* Dropdown menu */}
-            <div className={`dropdown-menu${dropdownMenuVisible ? ' show' : ''}`} id="dropdownMenu">
-              
-              <NavLink className="menu-link" to="/blog" onClick={handleLinkClick}>Home</NavLink>
-              {/* <NavLink className="menu-link" to="/search" onClick={handleLinkClick}>Search</NavLink> */}
-              <NavLink className="menu-link" to="/about" onClick={handleLinkClick}>About</NavLink>
-              <NavLink className="menu-link" to="/donate">Non-Profit</NavLink>
-              
+              {/* Dropdown menu */}
+              <div className={`dropdown-menu${dropdownMenuVisible ? ' show' : ''}`} id="dropdownMenu">
+                <NavLink className="menu-link" to="/blog" onClick={handleLinkClick}>Home</NavLink>
+                <NavLink className="menu-link" to="/about" onClick={handleLinkClick}>About</NavLink>
+                <NavLink className="menu-link" to="/donate">Non-Profit</NavLink>
+              </div>
+            
               {/* {currentUser ? (
                 <>
                   <NavLink to="/user-profile">{username}</NavLink>

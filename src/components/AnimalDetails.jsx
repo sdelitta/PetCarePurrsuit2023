@@ -166,10 +166,10 @@ const AnimalDetails = ({ animal, animals }) => {
 
             <div className="details_info" style={{ height: cardHeight ? `${cardHeight - 20}px` : "auto" }}>
               <p className="name">{animal.name}</p>
-              <div className="save-pet-button">
+              {/* <div className="save-pet-button">
                 <button className="save-pet" onClick={handleSavePet}>{isSaved ? "Pet Saved" : "Save Pet"}</button>
                 {saveMessage && <p>{saveMessage}</p>}
-              </div>
+              </div> */}
               {/* <div className="info_row">
                 <span className="info_key">Type:</span> <span className="info_value">{animal.type}</span>
               </div> */}

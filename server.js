@@ -1,11 +1,7 @@
 const express = require('express');
-const prerender = require('prerender-node');
 const path = require('path');
 
 const app = express();
-
-// Use prerender.io middleware as the first middleware
-app.use(prerender.set('prerenderToken', 'HFcLhaEKe3iKKCX9vybj'));
 
 // Log the User-Agent
 app.use((req, res, next) => {

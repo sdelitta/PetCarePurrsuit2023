@@ -6,6 +6,11 @@
   margin-top: 300px;
 }
 
+.disclosure {
+  font-size: .7em;
+  font-style: italic;
+}
+
 .blog_wrapper {
   margin-top: 40px;
 }
@@ -59,6 +64,10 @@
 .floating-image.right {
   float: right;
   margin-left: 16px;
+}
+
+.related_blog_post {
+  
 }
 
 

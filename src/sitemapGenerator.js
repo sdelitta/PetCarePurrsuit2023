@@ -7,38 +7,43 @@ const generateSitemap = async () => {
 
     // Map the entries to their URLs
     const urls = entries.items.map(item => {
-        return `https://petpurrsuit-23168.web.app/blog-post/${item.sys.id}`;
+        return `https://www.petcarepurrsuit.com/blog-post/${item.sys.id}`;
     });
 
     // Manually add URLs
     const additionalUrls = [
-        'https://petpurrsuit-23168.web.app/',
-        'https://petpurrsuit-23168.web.app/blog',
-        'https://petpurrsuit-23168.web.app/about',
-        'https://petpurrsuit-23168.web.app/search',
-        'https://petpurrsuit-23168.web.app/animal-details',
-        'https://petpurrsuit-23168.web.app/user-profile',
+        'https://www.petcarepurrsuit.com',
+        'https://www.petcarepurrsuit.com/blog',
+        'https://www.petcarepurrsuit.com/about/',
+        'https://www.petcarepurrsuit.com/donate',
+        'https://www.petcarepurrsuit.com/category/Canines',
+        'https://www.petcarepurrsuit.com/category/Felines',
+        'https://www.petcarepurrsuit.com/category/Exotic',
+        'https://www.petcarepurrsuit.com/category/Birds',
+        'https://www.petcarepurrsuit.com/category/Fish',
+        'https://www.petcarepurrsuit.com/category/Reptiles',
         // Add more URLs as needed...
     ];
 
-    // Combine Contentful URLs and manually added URLs
+    // // Combine Contentful URLs and manually added URLs
     const allUrls = [...urls, ...additionalUrls];
 
-    // Generate XML
-    let xml = '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
-    allUrls.forEach(url => {
-        xml += `  <sitemap>\n    <loc>${url}</loc>\n  </sitemap>\n`;
-    });
-    xml += '</sitemapindex>';
+// Generate XML
+let xml = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+allUrls.forEach(url => {
+    xml += `  <url>\n    <loc>${url}</loc>\n  </url>\n`;
+});
+xml += '</urlset>';
 
-    // Write to sitemap.xml
+// Write to sitemap.xml
+fs.writeFileSync('public/sitemap.xml', xml);
+
+try {
     fs.writeFileSync('public/sitemap.xml', xml);
+} catch (err) {
+    console.error('Error writing sitemap.xml: ', err);
+}
 
-    try {
-        fs.writeFileSync('public/sitemap.xml', xml);
-    } catch (err) {
-        console.error('Error writing sitemap.xml: ', err);
-    }
 };
 
 generateSitemap();

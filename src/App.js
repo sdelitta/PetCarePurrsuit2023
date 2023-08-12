@@ -47,12 +47,12 @@ function App() {
 
   return (
     <div className="App">
-      <HelmetProvider>
-        <div>
+      <div>
+        <HelmetProvider>
           <Router>
-          <header className="App-header">
-          <Nav />
-          </header>  
+            <header className="App-header">
+              <Nav />
+            </header>  
             <Routes>
               <Route path='/' element={<Blog />} />
               <Route path='/search' element={<SearchPage />} />
@@ -73,8 +73,8 @@ function App() {
               <Route path='/category/:category' element={<BlogByCategory />} />
             </Routes>
           </Router>
-        </div>
-      </HelmetProvider>
+        </HelmetProvider>
+      </div>
       <Footer />
     </div>
   );

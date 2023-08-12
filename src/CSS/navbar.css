@@ -4,7 +4,7 @@ Link {
 }
 
 header {
-  font-family:"new-kansas", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 14px;
   background: rgb(242, 234, 229);
   height: 10em;
@@ -26,7 +26,7 @@ nav {
 
 nav a,
 nav h3 {
-  font-family:"new-kansas", sans-serif;
+  font-family:'montserrat';
   text-shadow: 0 1px .6px #8c869089;
   text-decoration: none;
   text-transform: uppercase;
@@ -46,17 +46,17 @@ nav a:hover{
   /* margin: 0 200px; */
 }
 
-.navbar-brand {
+.emblem-container {
   display: fixed;
   flex-direction: center;
 }
 
-.navbar-brand {
+.emblem {
   background-image: url(../assets/Logo3rddraft.png);
   background-size: contain;
   background-repeat: no-repeat;
-  width: 55%;
-  height: 50vh;
+  width: 350px;
+  height: 350px;
   display: fixed;
   justify-self: center;
   align-items: center;
@@ -130,7 +130,7 @@ nav a:hover{
   padding: 8px 0 8px 0;
   margin-right: 3px;
   text-decoration: none;
-  font-family: 'Sigmar One';
+  font-family:'montserrat';
   text-shadow: 0 1px .6px #8c869089;
   text-decoration: none;
   text-transform: uppercase;

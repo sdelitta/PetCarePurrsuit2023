@@ -99,7 +99,7 @@ const BlogPost = () => {
         crossorigin="anonymous"></script>
       </Helmet>
       <div className="featured">
-        <div className="featured_preview">
+        <div className="blog_preview featured_preview">
           <img
             className="featured_image"
             src={post.fields.featuredImage.fields.file.url}
@@ -121,9 +121,9 @@ const BlogPost = () => {
               <p>{formatDate(post.fields.publishedDate)}</p>
             </div>
             <p className="featured_subtitle">{post.fields.shortDescription}</p>
+            <div className="disclosure">
+            <p className="disclosure">Disclosure: This article contains affiliate links, meaning when you make a purchase, I earn a small commission. Affiliate links cost you nothing to use, and helo keep mv content free. It's a win-win for us both! For more info. see the Disclosure Policy</p>
           </div>
-          <div className="disclosure">
-            <p>Disclosure: This article contains affiliate links, meaning when you make a purchase, I earn a small commission. Affiliate links cost you nothing to use, and helo keep mv content free. It's a win-win for us both! For more info. see the Disclosure Policy</p>
           </div>
         </div>
       </div>

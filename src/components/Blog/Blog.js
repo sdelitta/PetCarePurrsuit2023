@@ -22,23 +22,6 @@ const Blog = () => {
     const [filteredResults, setFilteredPosts] = useState([])
     const [searchIndex, setSearchIndex] = useState({});
 
-    // useEffect(() => {
-    //     const fetchPosts = async () => {
-    //       const entries = await client.getEntries({ 
-    //         content_type: 'pageBlogPost', 
-    //         include: 2, 
-    //         order: '-fields.publishedDate' });
-    //       setPosts(entries.items);
-      
-    //       const featuredPosts = await client.getEntries({ 
-    //         content_type: 'pageLanding', 
-    //         include: 2 });
-    //       setFeatured(featuredPosts.items);
-    //     };
-      
-    //     fetchPosts();
-    //     console.log(posts);
-    // }, []);
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -56,10 +39,10 @@ const Blog = () => {
             });
             setFeatured(featuredPosts.items);
       
-          // Create search index
+          
           const searchIndex = {};
           for (const post of posts) {
-            const tags = post.metadata.tags.map(tag => tag.sys.id.toLowerCase()); // Access tags under metadata
+            const tags = post.metadata.tags.map(tag => tag.sys.id.toLowerCase());
             for (const tag of tags) {
               for (let i = 1; i <= tag.length; i++) {
                 const substring = tag.substring(0, i);
@@ -78,18 +61,12 @@ const Blog = () => {
         fetchPosts();
     }, []);
 
-// You don't seem to be using this state, so you can remove it
-// const [searchResults, setSearchResults] = useState([]);
-
-// ...
 
 const handleSearch = (event) => {
     const searchInput = event.target.value.toLowerCase();
     setSearch(searchInput);
 
-    // Split searchInput into terms, and filter out any empty strings (i.e., "")
     const searchTerms = searchInput.split(' ').filter(term => term !== '');
-
     let results = [];
 
     for (let i = 0; i < searchTerms.length; i++) {
@@ -128,23 +105,13 @@ const handleSearch = (event) => {
                 </div>
                 {featured.length > 0 && (
                     <Link to={`/blog-post/${featured[0].fields.featuredBlogPost.sys.id}`} key={featured[0].fields.featuredBlogPost.sys.id}>
-                        <div className="blog_preview featured_preview">
+                        <div className=" blog_preview featured_preview">
                             <img
                                 className="featured_image"
                                 src={featured[0].fields.featuredBlogPost.fields.featuredImage.fields.file.url}
                                 alt={featured[0].fields.featuredBlogPost.fields.title}
                             />
-                            <div className="featured_content">
-                                {/* <div className="featured_author">
-                                <div className="featured_author_image_wrapper">
-                                    <img
-                                    className="featured_author_image"
-                                    src={featured[0].fields.featuredBlogPost.fields.author.fields.avatar.fields.file.url}
-                                    alt={featured[0].fields.featuredBlogPost.fields.author}
-                                    />
-                                </div>
-                                <p className="featured_author">{featured[0].fields.featuredBlogPost.fields.author.fields.name}</p>
-                                </div> */}
+                            <div className="featured_content">                                
                                 <h1 className="featured_title">{featured[0].fields.featuredBlogPost.fields.title}</h1>
                                 <div className="featured_subtitle">
                                 <p>{featured[0].fields.featuredBlogPost.fields.shortDescription}</p>
@@ -185,9 +152,9 @@ const handleSearch = (event) => {
                 <div className="latest_section_title">
                     <h3>Latest articles</h3>
                 </div>
-                <div className="latest_cards_container">
-                    {posts.map((post) => (
-                        <Link to={`/blog-post/${post.sys.id}`} key={post.sys.id} className="latest_card_link">
+                <div className="row latest_cards_container">
+                    {posts.slice(0, 6).map((post) => (
+                        <Link to={`/blog-post/${post.sys.id}`} key={post.sys.id} className="col-lg-6 col-md-4 col-sm-12 latest_card_link">
                             <div className="latest_card">
                                 <img
                                 className="latest_card_image"

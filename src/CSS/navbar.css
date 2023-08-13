@@ -1,8 +1,3 @@
-Link {
-  text-decoration: none;
-  color: purple;
-}
-
 header {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
@@ -16,9 +11,8 @@ header {
 }
 
 nav {
-  flex: 80%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   padding-top: 50px;
   position: relative;
@@ -30,20 +24,19 @@ nav h3 {
   text-shadow: 0 1px .6px #8c869089;
   text-decoration: none;
   text-transform: uppercase;
-  margin: auto 1.2em;
+  margin: auto 1.3em;
   color: rgb(113, 41, 162);
   font-weight: 600;
-  font-size: 16px;
+  font-size: 1.1em;
 }
+
 nav a:hover{
     text-decoration:underline;
 }
 
-.nav-container, .right-container {
-  /* display: flex; */
-  /* justify-content: flex-start; */
-  /* justify-items: center; */
-  /* margin: 0 200px; */
+Link {
+  text-decoration: none;
+  color: purple;
 }
 
 .emblem-container {
@@ -55,106 +48,27 @@ nav a:hover{
   background-image: url(../assets/Logo3rddraft.png);
   background-size: contain;
   background-repeat: no-repeat;
-  width: 350px;
-  height: 350px;
+  width: 20vw;
+  height: 20vw;
   display: fixed;
   justify-self: center;
   align-items: center;
-  margin-top: 180px;
+  margin-top: 20vh;
 }
 
-.nav-container, .left-container {
+.nav-container, .left-container, .right-container {
+  flex: 1;
   display: flex;
-  justify-content: flex-start;
-  /* margin: 0 2.5vw; */
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.menu-link {
+  margin: 0 1em;
 }
 
 .hidden-menu button {
   display: none;
-}
-
-.sign-out {
-  padding: 5px;
-  width: 8vw;
-  background-color: #f3691a;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-  border-radius: 10px 10px 10px 10px;
-}
-
-.sign-out-button a {
-  display: flex;
-  justify-content: flex-end;
-  text-decoration: none;
-}
-
-.burger-menu {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  height: 26px;
-  width: 40px;
-  cursor: pointer;
-  position: absolute;
-  left: 100px;
-  transform: translateY(-50%);
-  margin-top: 15px;
-  z-index: 10;
-}
-
-.burger-menu div {
-  height: 4px;
-  background-color: rgb(113, 41, 162);
-  margin-bottom: 3px;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 91%;
-  left: 2%;
-  background-color: rgb(242, 234, 229);
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  flex-direction: column;
-  padding: 8px;
-  border-radius: 4px;
-}
-
-.dropdown-menu a {
-  padding: 8px 0 8px 0;
-  margin-right: 3px;
-  text-decoration: none;
-  font-family:'montserrat';
-  text-shadow: 0 1px .6px #8c869089;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: rgb(113, 41, 162);
-  font-weight: 600;
-  font-size: 16px;
-}
-
-.burger-menu-container:hover .dropdown-menu {
-  display: flex;
-}
-
-.burger-menu-container:blur .dropdown-menu {
-  display: none;
-}
-
-.burger-menu-container::before {
-  content: '';
-  position: absolute;
-  height: 100px; /* adjust this to span the gap */
-  width: 15%;
-  top: 1px; /* adjust this to position the bridge correctly */
-  left: 0;
-  background: transparent;
 }
 
 .visible-link {
@@ -163,199 +77,103 @@ nav a:hover{
 
 .dropdown {
   position: relative;
-  padding-right: 25px;
-  font-family: 'montserrat';
   text-decoration: none;
-  font-family:'montserrat';
   text-shadow: 0 1px .6px #8c869089;
-  text-decoration: none;
   text-transform: uppercase;
   color: rgb(113, 41, 162);
   font-weight: 600;
   font-size: 15px;
 }
 
-.dropdown-content {
+.dropdown-menu {
   display: none;
-  position:absolute;
-  min-width: 160px;
+  position: absolute;
+  min-width: 140px;
   background-color: rgb(242, 234, 229);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   z-index: 1;
-  flex-direction: column;
+  flex-direction: column; 
   border-radius: 4px;
 }
 
-.dropdown-content .dropdown-item {
+.dropdown-menu a {
+  text-align: center;
+  padding: 8px 0 8px 0;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  text-decoration: none;
+  text-shadow: 0 1px .6px #8c869089;
+  text-decoration: none;
+  text-transform: uppercase;
   color: rgb(113, 41, 162);
-  padding: 12px 14px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.dropdown-menu.show {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  top: calc(10% + 10px);
+  left: -20%; 
+}
+
+.dropdown-menu .dropdown-item {
+  color: rgb(113, 41, 162);
+  padding: 12px 0;
   text-decoration: none;
   display: block;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
 
-
-/* .hidden-link {
-  display: none;
-} */
-
-
-@media only screen and (max-width: 1300px) {
-  /* nav {
-    flex: 80%;
-    display: flex;
-    justify-content: center;
-    padding: .1px;
-    padding-top: 46px;
-    align-items: center;
-  } */
-
-  /* nav a,
-  nav h3 {
-    align-items: space-around;
-    font-size: 15px;
-  }
-
-  .emblem {
-    background-size: contain;
-    background-repeat: no-repeat;
-    justify-content: center;
-    align-items: center;
-    margin-top: 150px;
-  } */
-
-  .emblem-container {
-    flex: 1 1;
-    display: flex;
-  }
-
-  .nav-container.right-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    /* margin-bottom: 20px; */
-    margin-top: 15px;
-    margin-right: 60px;
-  }
-
-  .rightsideLink {
-    display: flex;
-    align-content: center;
-  }
-
-  .nav-container.left-container {
-    display: flex;
-    justify-content: space-around;
-    /* margin: 0px 3vw; */
-  }
-
-}
-
-@media only screen and (max-width: 1000px) {
-  nav a,
-  nav h3 {
-    padding: 0px 0px;
-    align-items: space-around;
-    font-size: 15px;
-  }
-
-  .nav-container.left-container {
-    display: flex;
-    justify-content: space-around;
-    margin: 0px 0px 0px 0vw;
+/* For screens larger than 768px, hide the mobile navbar */
+@media (min-width: 769px) {
+  .mobile-navbar {
+      display: none;
   }
 }
 
-@media only screen and (max-width: 850px) {
-  .burger-menu {
-    display: flex;
-    margin-top: -26px;
-    left: 48px;
+/* For screens 768px or smaller, hide the desktop navbar */
+@media (max-width: 768px) {
+  .desktop-navbar {
+      display: none;
   }
-
-  .burger-menu div {
-    display: flex;
-    justify-content: center;
-    height: 4px;
-    background-color: rgb(113, 41, 162);
-    margin-bottom: 3px;
-  }
-
-  /* .dropdown {
-    padding: 0px;
-    left: 55px;
-  } */
 
   nav {
-    display: flex;
     width: 100%;
-    justify-content: flex-end;
-    position: relative; 
   }
 
-  nav a {
-    padding: 0px;
-    margin: 0px 6px;
-    font-size: 1em;
-  }
-
-  .nav-container.left-container {
-    display: none;
-    margin-left: 10px;
-  }
-
-  .nav-container.right-container {
-    display: flex;
-    margin-bottom: 19px;
+  nav a,
+  nav h3 {
+    justify-content: space-evenly;
+    font-size: .6em;
   }
 
   .emblem-container {
-    flex: 1 1 ;
     display: fixed;
-    justify-content: center; 
-    position: absolute; 
-    left: 50%; 
-    transform: translateX(-50%); 
+    flex-direction: center;
   }
-
-  .emblem {
-    margin-top: 60px;
-    width: 200px;
-    height: 200px;
-  }
-
-  .sign-out {
-    padding: 2px;
-    width: 48px;
-    background-color: #f3691a;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    border-radius: 10px 10px 10px 10px;
-  }
-
-  @media only screen and (max-width: 650px) {
-    .dropdown {
-      padding: 0px;
-      left: 75px;
-    }
   
-    .dropdown-content {
-      display: none;
-      position:absolute;
-      margin-left: 6px;
-      margin-top: 10px;
-      min-width: 100px;
-      font-size: 15px;
-      
-    }
+  .emblem {
+    width: 20vw;
+    height: 20vw;
+    margin-top: 0vh;
   }
-
+  
+  .dropdown-menu {
+    min-width: 90px;
+  }
+  
+  .dropdown-menu a {
+    margin: 0;
+    font-size: 10px;
+  }
+  
+  .dropdown-menu .dropdown-item {
+    padding: 8px 0;
+  }
 }

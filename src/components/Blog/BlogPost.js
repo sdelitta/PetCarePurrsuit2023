@@ -134,9 +134,9 @@ const BlogPost = () => {
         <h2>Related Posts</h2>
       </div>
       {post.fields.relatedBlogPosts && post.fields.relatedBlogPosts.length > 0 && (
-      <div className="latest_cards_container">
+      <div className="row latest_cards_container related_blog_post">
         {post.fields.relatedBlogPosts.map(relatedPost => (
-          <Link to={`/blog-post/${relatedPost.sys.id}`} key={relatedPost.sys.id} className="latest_card_link">
+          <Link to={`/blog-post/${relatedPost.sys.id}`} key={relatedPost.sys.id} className="col-lg-6 col-md-4 col-sm-12 latest_card_link">
             <div className="latest_card">
               <img
                 className="latest_card_image"

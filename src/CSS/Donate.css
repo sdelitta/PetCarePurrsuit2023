@@ -7,15 +7,14 @@
 .donate_container {
   display: flex;
   justify-items: center;
-  justify-content: space-between;
   flex-direction: column;
   padding-bottom: 35vh;
   background-color:rgb(242, 234, 229);
   border-radius: 20px;
-  padding: 80px;
-  margin: 250px 0 100px 15vw;
+  padding: 20px 80px 0 80px;
+  margin: 150px 0 100px 10%;
   box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.748);
-  width: 60%;
+  width: 80%;
 }
   
 .donate_row {
@@ -31,7 +30,6 @@
 
 .donate_img {
   max-width: 13vw;
-  
 }
 
 .donate_text_container {
@@ -55,51 +53,42 @@
 }
 
 .donate_description {
-  font-size: 22px;
+  font-size: 18px;
   color: #561a71;
   text-shadow: .5px .5px .5px;
   letter-spacing: .7px;
   width: 35vw;
 }
 
-@media only screen and (max-width: 1200px) {
-  .donate_container {
-    margin: 190px 0 50px 5vw;
-    width: 73%;
-  }
-
-  .donate_img {
-    max-width: 20vw;
-  }
-
-  .donate_text_container,
-  .donate_description {
-    width: 50vw;
-  }
-}
-
 @media only screen and (max-width: 768px) {
   .donate_container {
-    margin: 90px 0 50px 5vw;
-    width: 80%;
-    padding: 30px;
+    margin: -50px 0 80px 5%;
+    width: 90%;
+    padding: 10px 0 0 0;
   }
 
   .donate_row {
     flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .donate_row:not(:last-child) {
+    border-bottom: 2px solid #ccc;
   }
 
   .donate_text_container,
   .donate_description {
-    width: 70vw;
+    width: 100%;
+  }
+
+  .donate_link {
+    width: 95%;
+    font-size: 20px;
+    margin-top: -30px;
   }
 
   .donate_img {
     max-width: 30vw;
+    margin-top: 20px;
   }
 }
-
-
-
-
-

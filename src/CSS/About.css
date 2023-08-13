@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 300px 9vw 0 9vw;
+  margin: 200px 9vw 0 9vw;
 }
 
 .about_title {
@@ -48,7 +48,16 @@
 
 @media (max-width: 850px) {
   .about_container {
-    margin-top: 160px;
+    margin: 10px 10px 0 10px;
+  }
+
+  .about_text {
+    padding: 20px;
+  }
+
+  .about_description {
+    font-size: 1em;
+    margin-bottom: 40px;
   }
 }
   

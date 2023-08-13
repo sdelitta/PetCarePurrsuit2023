@@ -39,9 +39,16 @@ Link {
   color: purple;
 }
 
+.left-container {
+  margin: 0 -15px;
+  margin-left: -40px;
+
+}
+
 .emblem-container {
   display: fixed;
   flex-direction: center;
+  margin-right: -10px;
 }
 
 .emblem {
@@ -53,7 +60,7 @@ Link {
   display: fixed;
   justify-self: center;
   align-items: center;
-  margin-top: 20vh;
+  margin-top: 12vh;
 }
 
 .nav-container, .left-container, .right-container {
@@ -143,25 +150,37 @@ Link {
       display: none;
   }
 
+  header {
+    height: 5em;
+  }
+  
   nav {
     width: 100%;
+    padding-top: 25px;
   }
 
   nav a,
   nav h3 {
     justify-content: space-evenly;
-    font-size: .6em;
+    font-size: .62em;
+  }
+
+  .left-container {
+    margin: 0 0;
+    margin-left: 0;
   }
 
   .emblem-container {
     display: fixed;
     flex-direction: center;
+    margin-right: -8px;
+    margin-left: -10px;
   }
   
   .emblem {
     width: 20vw;
     height: 20vw;
-    margin-top: 0vh;
+    margin-top: 2vh;
   }
   
   .dropdown-menu {

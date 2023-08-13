@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 320px 0 20vh 5vw;
+    margin: 200px 0 20vh 5vw;
     /* padding-top: 20px; */
     padding-bottom: 25px;
     width: 90vw;
@@ -79,7 +79,7 @@ input {
     }
 
     .search_container {
-        margin: 120px 0 20vh 0;
+        margin: 20px 0 2vh 0;
         /* padding-top: 20px; */
         padding-bottom: 25px;
         width: 100vw;

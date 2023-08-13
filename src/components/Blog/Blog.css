@@ -202,7 +202,7 @@ a:hover {
 
 .latest_card_title {
     font-weight: 500;
-    font-size: .6em;
+    font-size: .78em;
     font-kerning: auto;
 }
 
@@ -254,47 +254,6 @@ a:hover {
     letter-spacing: 1.28px;
     color: rgb(246, 240, 235);
     text-shadow: .9px .9px 1px;
-}
-
-@media (max-width: 1200px) {
-    .latest_cards_container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .latest_card {
-        height: 390px;
-        margin-bottom: 2%;
-        margin-left: 2%;
-    }
-
-    .latest_card_title {
-        font-weight: 500;
-        font-size: 18px;
-    }
-
-    .latest_card_content {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 5px 35px 5px 35px;
-        height: 100%;
-    }
-
-    .latest_card_image {
-        object-fit: cover;
-        width: 100%;
-        height: 250px;
-    }
-
-    .featured_title {
-        font-size: 1.5em;
-        line-height: 1.08;
-    }
-
-    .latest_author {
-        display: flex;
-        flex-direction: row;
-    }
 }
 
 @media (max-width: 850px) {
@@ -350,9 +309,11 @@ a:hover {
         margin: 0 0 20px 0;
     }
 
-    .latest_cards_container {
+    .latest_cards_container {        
         grid-template-columns: 0fr;
         height: auto;
+        width: 100%;
+        margin: 0;
     }
 
     .latest_card {
@@ -372,6 +333,10 @@ a:hover {
         object-fit: cover;
         width: 100%;
         height: 25vh;
+    }
+
+    .latest_card_title {
+        font-size: 15px;
     }
 
     .featured_author_image_wrapper,
